@@ -9,7 +9,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function DeleteDialog(props){
-    const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -25,30 +25,53 @@ export default function DeleteDialog(props){
 
   return (
     <div>
-      <Button color="secondary" onClick={handleClickOpen}>
+
+      <Button
+        color="secondary"
+        onClick={handleClickOpen}>
         Delete
       </Button>
+
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">{"Delete employee?"}</DialogTitle>
+        >
+
+        <DialogTitle id="alert-dialog-title">
+          {"Delete employee?"}
+        </DialogTitle>
+
         <DialogContent>
+
           <DialogContentText id="alert-dialog-description">
-                {"Are you sure you want to delete the employee "+props.employee.firstName+" "+props.employee.lastName+"?"}
+
+            {"Are you sure you want to delete the employee "+props.employee.firstName+" "+props.employee.lastName+"?"}
           </DialogContentText>
+
         </DialogContent>
+
         <DialogActions>
-          <Button onClick={handleClose} color="primary" variant="outlined">
+
+          <Button
+            onClick={handleClose}
+            color="primary"
+            variant="outlined">
             Cancel
           </Button>
-          <Button onClick={handleConfirmDelete} color="secondary" variant="outlined">
+
+          <Button
+            onClick={handleConfirmDelete}
+            color="secondary"
+            variant="outlined">
             Delete
           </Button>
+
         </DialogActions>
+
       </Dialog>
+
     </div>
   );
 }

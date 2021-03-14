@@ -96,28 +96,48 @@ export default function PersistentDrawerLeft(props) {
 
   return (
     <div className={classes.root}>
+
+
       <CssBaseline />
+
+
       <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
-      >
+        >
+
+
         <Toolbar>
+
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
-          >
+            >
+
+
             <MenuIcon />
+
+
           </IconButton>
+
+
           <Typography variant="h6" noWrap>
             Employee Directory
           </Typography>
+
+
         </Toolbar>
+
+
       </AppBar>
+
+
       <Drawer
         className={classes.drawer}
         variant="persistent"
@@ -126,36 +146,79 @@ export default function PersistentDrawerLeft(props) {
         classes={{
           paper: classes.drawerPaper,
         }}
-      >
+        >
+
+
         <div className={classes.drawerHeader}>
+
+
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+
+
+            {theme.direction === 'ltr' ?
+              <ChevronLeftIcon />
+              :
+              <ChevronRightIcon />
+            }
           </IconButton>
+
+
         </div>
+
+
         <List component="nav">
-            <ListItem>
-                <SearchBar
-                    filterText={props.filterText}
-                    filterTextChange={props.filterTextChange}
-                />
-            </ListItem>
-            <CreateDialog
-                attributes={props.attributes}
-                onCreate={props.onCreate}
+
+
+          <ListItem>
+
+
+            <SearchBar
+              filterText={props.filterText}
+              filterTextChange={props.filterTextChange}
+              />
+
+
+          </ListItem>
+
+
+          <CreateDialog
+            attributes={props.attributes}
+            onCreate={props.onCreate}
             />
-            <ListItem disableGutters={true}>
-                <Button className="menuItem" color="secondary" href="/logout" >Logout</Button>
-            </ListItem>
+
+
+          <ListItem disableGutters={true}>
+
+
+            <Button
+              className="menuItem"
+              color="secondary"
+              href="/logout" >Logout</Button>
+
+
+          </ListItem>
+
+
         </List>
 
+
+
       </Drawer>
+
+
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })}
-      >
+        >
+
+
         <div className={classes.drawerHeader} />
+
+
       </main>
+
+
     </div>
   );
 }

@@ -12,9 +12,9 @@ import TableRow from '@material-ui/core/TableRow';
 
 const columns = [
   {
-      id: 'id',
-      label: 'ID',
-      minWidth: 40
+    id: 'id',
+    label: 'ID',
+    minWidth: 40
   },
   {
     id: 'firstName',
@@ -28,12 +28,12 @@ const columns = [
     minWidth: 90,
     align: 'right'
   },
-    {
-      id: 'email',
-      label: 'Email',
-      minWidth: 90,
-      align: 'right'
-    },
+  {
+    id: 'email',
+    label: 'Email',
+    minWidth: 90,
+    align: 'right'
+  },
   {
     id: 'jobTitle',
     label: 'Job Title',
@@ -67,83 +67,101 @@ const useStyles = makeStyles({
 
 export default function EmployeeList(props) {
 
-    const classes = useStyles();
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const classes = useStyles();
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-    const handleChangePage = (event, newPage) => {
-      setPage(newPage);
-    };
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
 
-    const handleChangeRowsPerPage = (event) => {
-      setRowsPerPage(+event.target.value);
-      setPage(0);
-    };
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
 
-    const rows = [];
-    const filterText = props.filterText;
-    const employees = props.employees.map(employee =>
-        {
-            let fullName = employee.firstName.toLowerCase().concat(' ', employee.lastName.toLowerCase());
-            if(
-                    fullName.indexOf(filterText.toLowerCase()) === -1 &&
-                    employee.jobTitle.toLowerCase().indexOf(filterText.toLowerCase()) === -1 &&
-                    employee.email.toLowerCase().indexOf(filterText.toLowerCase()) === -1 &&
-                    employee.id !== parseInt(filterText.toLowerCase())
-                ){
-                return;
-            }
-            rows.push(
-                <Employee
-                    attributes={props.attributes}
-                    key={employee.id}
-                    employee={employee}
-                    onDelete={props.onDelete}
-                    editEmployee={props.onEdit}
-                />
-            );
-        }
-    );
-
-    if(rows.length <= page * rowsPerPage && page !== 0){
-        setPage(page-1);
-    }
-
-    return (
-        <Paper className={classes.root}>
-          <TableContainer className={classes.container}>
-            <Table stickyHeader aria-label="sticky table">
-              <TableHead>
-                <TableRow>
-                  {columns.map((column) => (
-                    <TableCell
-                      key={column.id}
-                      align={column.align}
-                      style={{ minWidth: column.minWidth }}
-                    >
-                      {column.label}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
-                    return (
-                        row
-                    );
-                })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
-            component="div"
-            count={rows.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onChangePage={handleChangePage}
-            onChangeRowsPerPage={handleChangeRowsPerPage}
+  const rows = [];
+  const filterText = props.filterText;
+  const employees = props.employees.map(employee =>
+    {
+      let fullName = employee.firstName.toLowerCase().concat(' ', employee.lastName.toLowerCase());
+      if(
+        fullName.indexOf(filterText.toLowerCase()) === -1 &&
+        employee.jobTitle.toLowerCase().indexOf(filterText.toLowerCase()) === -1 &&
+        employee.email.toLowerCase().indexOf(filterText.toLowerCase()) === -1 &&
+        employee.id !== parseInt(filterText.toLowerCase())
+      ){
+        return;
+      }
+      rows.push(
+        <Employee
+          attributes={props.attributes}
+          key={employee.id}
+          employee={employee}
+          onDelete={props.onDelete}
+          editEmployee={props.onEdit}
           />
-        </Paper>
-    );
+      );
+    }
+  );
+
+  if(rows.length <= page * rowsPerPage && page !== 0){
+    setPage(page-1);
+  }
+
+  return (
+    <Paper className={classes.root}>
+
+      <TableContainer className={classes.container}>
+
+        <Table stickyHeader aria-label="sticky table">
+
+          <TableHead>
+
+
+            <TableRow>
+
+
+              {columns.map((column) => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth }}
+                  >
+
+
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+
+
+          </TableHead>
+
+
+          <TableBody>
+
+            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
+              return (
+                row
+              );
+            })}
+          </TableBody>
+
+        </Table>
+
+      </TableContainer>
+
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+        />
+
+    </Paper>
+  );
 }
