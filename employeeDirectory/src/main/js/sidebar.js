@@ -97,9 +97,7 @@ export default function PersistentDrawerLeft(props) {
   return (
     <div className={classes.root}>
 
-
       <CssBaseline />
-
 
       <AppBar
         position="fixed"
@@ -108,9 +106,7 @@ export default function PersistentDrawerLeft(props) {
         })}
         >
 
-
         <Toolbar>
-
 
           <IconButton
             color="inherit"
@@ -120,23 +116,17 @@ export default function PersistentDrawerLeft(props) {
             className={clsx(classes.menuButton, open && classes.hide)}
             >
 
-
             <MenuIcon />
 
-
           </IconButton>
-
 
           <Typography variant="h6" noWrap>
             Employee Directory
           </Typography>
 
-
         </Toolbar>
 
-
       </AppBar>
-
 
       <Drawer
         className={classes.drawer}
@@ -148,12 +138,9 @@ export default function PersistentDrawerLeft(props) {
         }}
         >
 
-
         <div className={classes.drawerHeader}>
 
-
           <IconButton onClick={handleDrawerClose}>
-
 
             {theme.direction === 'ltr' ?
               <ChevronLeftIcon />
@@ -162,49 +149,36 @@ export default function PersistentDrawerLeft(props) {
             }
           </IconButton>
 
-
         </div>
-
 
         <List component="nav">
 
-
           <ListItem>
-
 
             <SearchBar
               filterText={props.filterText}
               filterTextChange={props.filterTextChange}
               />
 
-
           </ListItem>
-
 
           <CreateDialog
             attributes={props.attributes}
             onCreate={props.onCreate}
             />
 
-
           <ListItem disableGutters={true}>
-
 
             <Button
               className="menuItem"
               color="secondary"
               href="/logout" >Logout</Button>
 
-
           </ListItem>
-
 
         </List>
 
-
-
       </Drawer>
-
 
       <main
         className={clsx(classes.content, {
@@ -212,12 +186,9 @@ export default function PersistentDrawerLeft(props) {
         })}
         >
 
-
         <div className={classes.drawerHeader} />
 
-
       </main>
-
 
     </div>
   );

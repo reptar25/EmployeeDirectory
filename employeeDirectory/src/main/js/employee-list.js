@@ -118,9 +118,7 @@ export default function EmployeeList(props) {
 
           <TableHead>
 
-
             <TableRow>
-
 
               {columns.map((column) => (
                 <TableCell
@@ -129,18 +127,15 @@ export default function EmployeeList(props) {
                   style={{ minWidth: column.minWidth }}
                   >
 
-
                   {column.label}
                 </TableCell>
               ))}
+              
             </TableRow>
-
 
           </TableHead>
 
-
           <TableBody>
-
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
               return (
                 row
