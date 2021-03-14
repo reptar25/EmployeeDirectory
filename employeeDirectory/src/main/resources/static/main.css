@@ -1,0 +1,6 @@
+.menuItem {
+  width: 100%;
+  display: flex;
+  justifyContent: center;
+  align-items: center;
+}
