@@ -19,14 +19,13 @@ class App extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {employees: [], attributes: [], links: {}, filterText: '', currentOnly: false};
+		this.state = {employees: [], attributes: [], links: {}, filterText: ''};
 
 		this.onCreate = this.onCreate.bind(this);
 		this.onDelete = this.onDelete.bind(this);
 		this.onNavigate = this.onNavigate.bind(this);
 		this.onEdit = this.onEdit.bind(this);
 		this.filterTextChange = this.filterTextChange.bind(this);
-		this.currentOnlyChange = this.currentOnlyChange.bind(this);
 	}
 
 	componentDidMount() {
@@ -127,12 +126,6 @@ class App extends React.Component {
 		})
 	}
 
-	currentOnlyChange(currentOnly){
-		this.setState({
-			currentOnly: currentOnly
-		})
-	}
-
 	render() {
 		return (
 			<div>
@@ -158,11 +151,11 @@ class App extends React.Component {
 
 					<Grid item xs={12}>
 
-                        <SearchBar
-                            filterText={this.state.filterText}
-                            filterTextChange={this.filterTextChange}
-                          />
-                    </Grid>
+              <SearchBar
+                  filterText={this.state.filterText}
+                  filterTextChange={this.filterTextChange}
+                />
+          </Grid>
 
 					<Grid item xs={12}>
 
@@ -176,7 +169,6 @@ class App extends React.Component {
 							onEdit={this.onEdit}
 							attributes={this.state.attributes}
 							filterText={this.state.filterText}
-							currentOnly={this.state.currentOnly}
 							/>
 
 					</Grid>

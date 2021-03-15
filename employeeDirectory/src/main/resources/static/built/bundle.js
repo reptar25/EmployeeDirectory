@@ -65694,15 +65694,13 @@ var App = /*#__PURE__*/function (_React$Component) {
       employees: [],
       attributes: [],
       links: {},
-      filterText: '',
-      currentOnly: false
+      filterText: ''
     };
     _this.onCreate = _this.onCreate.bind(_assertThisInitialized(_this));
     _this.onDelete = _this.onDelete.bind(_assertThisInitialized(_this));
     _this.onNavigate = _this.onNavigate.bind(_assertThisInitialized(_this));
     _this.onEdit = _this.onEdit.bind(_assertThisInitialized(_this));
     _this.filterTextChange = _this.filterTextChange.bind(_assertThisInitialized(_this));
-    _this.currentOnlyChange = _this.currentOnlyChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -65842,13 +65840,6 @@ var App = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "currentOnlyChange",
-    value: function currentOnlyChange(currentOnly) {
-      this.setState({
-        currentOnly: currentOnly
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -65881,8 +65872,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         updatePageSize: this.updatePageSize,
         onEdit: this.onEdit,
         attributes: this.state.attributes,
-        filterText: this.state.filterText,
-        currentOnly: this.state.currentOnly
+        filterText: this.state.filterText
       }))));
     }
   }]);
