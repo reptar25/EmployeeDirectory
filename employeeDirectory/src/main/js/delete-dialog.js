@@ -7,6 +7,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export default function DeleteDialog(props){
   const [open, setOpen] = React.useState(false);
@@ -28,7 +29,8 @@ export default function DeleteDialog(props){
 
       <Button
         color="secondary"
-        onClick={handleClickOpen}>
+        onClick={handleClickOpen}
+        startIcon={<DeleteIcon />}>
         Delete
       </Button>
 
@@ -47,7 +49,7 @@ export default function DeleteDialog(props){
 
           <DialogContentText id="alert-dialog-description">
 
-            {"Are you sure you want to delete the employee "+props.employee.firstName+" "+props.employee.lastName+"?"}
+            {"Are you sure you want to delete the employee '"+props.employee.firstName+" "+props.employee.lastName+"'?"}
           </DialogContentText>
 
         </DialogContent>
@@ -64,7 +66,8 @@ export default function DeleteDialog(props){
           <Button
             onClick={handleConfirmDelete}
             color="secondary"
-            variant="outlined">
+            variant="outlined"
+            startIcon={<DeleteIcon />}>
             Delete
           </Button>
 

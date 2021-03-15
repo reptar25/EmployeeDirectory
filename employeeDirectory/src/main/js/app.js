@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import PersistentDrawerLeft from './sidebar'
+import SearchBar from './search';
 
 'use strict';
 
@@ -137,8 +138,6 @@ class App extends React.Component {
 			<div>
 
 				<PersistentDrawerLeft
-					filterText={this.state.filterText}
-					filterTextChange={this.filterTextChange}
 					attributes={this.state.attributes}
 					onCreate={this.onCreate}
 					/>
@@ -156,6 +155,14 @@ class App extends React.Component {
 						</Typography>
 
 					</Grid>
+
+					<Grid item xs={12}>
+
+                        <SearchBar
+                            filterText={this.state.filterText}
+                            filterTextChange={this.filterTextChange}
+                          />
+                    </Grid>
 
 					<Grid item xs={12}>
 

@@ -1,5 +1,3 @@
-
-
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
@@ -9,6 +7,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import SaveIcon from '@material-ui/icons/Save';
+import EditIcon from '@material-ui/icons/Edit';
 
 export default function EditDialog(props) {
         const [open, setOpen] = React.useState(false);
@@ -46,7 +46,9 @@ export default function EditDialog(props) {
 		  return (
         <div>
 
-          <Button color="primary" onClick={handleClickOpen}>
+          <Button color="primary"
+          onClick={handleClickOpen}
+          startIcon={<EditIcon />}>
             Edit
           </Button>
 
@@ -76,7 +78,8 @@ export default function EditDialog(props) {
               <Button
                 onClick={handleSubmit}
                 color="primary"
-                variant="outlined">
+                variant="outlined"
+                startIcon={<SaveIcon />}>
                 Save
               </Button>
 

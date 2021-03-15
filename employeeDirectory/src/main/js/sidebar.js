@@ -18,7 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Button from '@material-ui/core/Button';
-import SearchBar from './search';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import CreateDialog from './create-dialog';
 
 const drawerWidth = 240;
@@ -153,15 +153,6 @@ export default function PersistentDrawerLeft(props) {
 
         <List component="nav">
 
-          <ListItem>
-
-            <SearchBar
-              filterText={props.filterText}
-              filterTextChange={props.filterTextChange}
-              />
-
-          </ListItem>
-
           <CreateDialog
             attributes={props.attributes}
             onCreate={props.onCreate}
@@ -172,7 +163,10 @@ export default function PersistentDrawerLeft(props) {
             <Button
               className="menuItem"
               color="secondary"
-              href="/logout" >Logout</Button>
+              href="/logout"
+              startIcon={<ExitToAppIcon />}>
+              Logout
+            </Button>
 
           </ListItem>
 
