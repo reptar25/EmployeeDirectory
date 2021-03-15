@@ -90,7 +90,7 @@ export default function CreateDialog(props) {
               onClick={handleSubmit}
               color="primary"
               variant="outlined"
-              startIcon={<AddCircleOutlineIcon />}>
+              endIcon={<AddCircleOutlineIcon />}>
               Create
             </Button>
 

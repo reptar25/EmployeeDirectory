@@ -65989,7 +65989,8 @@ function CreateDialog(props) {
   }, "Cancel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     onClick: handleSubmit,
     color: "primary",
-    variant: "outlined"
+    variant: "outlined",
+    endIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_AddCircleOutline__WEBPACK_IMPORTED_MODULE_9___default.a, null)
   }, "Create"))));
 }
 
