@@ -1,6 +1,6 @@
 # Employee Directory #
 
-A simple employee directory administrative web app using a React material ui frontend with a Spring REST Data API backend.
+A simple employee directory administrative web app using [React](https://reactjs.org/) with [Material UI](https://material-ui.com/) as a frontend and [Spring REST Data](https://spring.io/projects/spring-data-rest) as a backend.
 Allows managers to login and view all employees, edit or delete employees who they are managers of, and create new employees.
 There is also an admin role that allows admins to edit or delete any employee.
 
